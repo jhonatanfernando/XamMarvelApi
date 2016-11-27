@@ -1,10 +1,13 @@
 ﻿using System;
-namespace Marvel
+using Xamarin.Forms;
+
+namespace Marvel.Controls
 {
-	public class CustomEditor
+	public class CustomEditor : Editor
 	{
 		public CustomEditor()
 		{
+			this.TextChanged += (sender, e) => { this.InvalidateMeasure(); };
 		}
 	}
 }

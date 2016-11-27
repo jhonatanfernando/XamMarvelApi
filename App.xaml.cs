@@ -4,11 +4,14 @@ namespace Marvel
 {
 	public partial class App : Application
 	{
+		public static INavigation Navigation;
+
 		public App()
 		{
 			InitializeComponent();
 
-			MainPage = new MarvelPage();
+			MainPage =  new NavigationPage(new  PrincipalPage());
+			Navigation = MainPage.Navigation;
 		}
 
 		protected override void OnStart()
