@@ -15,6 +15,11 @@
 	</ContentPage.Padding>
 	<ContentPage.Content>
 		<StackLayout>
+
+			<SearchBar
+				Text="{Binding SearchText}" 
+				SearchCommand="{Binding SearchByName}"></SearchBar>
+
 			<ListView x:Name="listCharacters" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" ItemsSource="{Binding CharacterList}" CachingStrategy="RecycleElement" RefreshCommand="{Binding Refresh}" IsRefreshing="{Binding IsBusy}">
 				<ListView.ItemTemplate>
 					<DataTemplate>

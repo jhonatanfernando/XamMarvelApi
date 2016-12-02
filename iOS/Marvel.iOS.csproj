@@ -146,6 +146,24 @@
     <Reference Include="Akavache.Sqlite3">
       <HintPath>..\packages\akavache.sqlite3.5.0.0\lib\Portable-Net45+Win8+WP8+Wpa81\Akavache.Sqlite3.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Azure.Mobile">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.0.2.1\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.iOS.Bindings">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.0.2.1\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Analytics">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Analytics.0.2.1\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Analytics.iOS.Bindings">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Analytics.0.2.1\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.Analytics.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Crashes">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Crashes.0.2.1\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.Crashes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Mobile.Crashes.iOS.Bindings">
+      <HintPath>..\packages\Microsoft.Azure.Mobile.Crashes.0.2.1\lib\Xamarin.iOS10\Microsoft.Azure.Mobile.Crashes.iOS.Bindings.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Marvel.csproj">
@@ -169,6 +187,7 @@
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
+    <None Include="MobileCenterFrameworks\CrashReporter.framework\CrashReporter" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />

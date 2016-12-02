@@ -25,7 +25,7 @@ namespace Marvel
 			listCharacters.IsPullToRefreshEnabled = true;
 
 			BindingContext = vm;
-			vm.LoadData(null,100,100);
+			vm.LoadData(null,100,0);
 		}
 	}
 }

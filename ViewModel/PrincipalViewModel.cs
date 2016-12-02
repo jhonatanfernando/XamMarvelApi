@@ -20,6 +20,37 @@ namespace Marvel
 		}
 
 
+		private string _SearchText;
+
+		public string SearchText
+		{
+			get
+			{
+				return _SearchText;
+			}
+			set
+			{
+				_SearchText = value;
+				OnPropertyChanged("SearchText");
+			}
+		}
+
+		private ICommand _SearchByName;
+
+		public ICommand SearchByName
+		{
+			get
+			{
+				return _SearchByName ?? (_SearchByName = new Command(
+					async () => await ExecuteSearchByNameCommand()));
+			}
+		}
+
+		private async Task ExecuteSearchByNameCommand()
+		{
+			await LoadData(SearchText);
+		}
+
 		private List<CharacterItemViewModel> _CharacterList;
 
 		public List<CharacterItemViewModel> CharacterList
@@ -40,7 +71,7 @@ namespace Marvel
 			IsBusy = true;
 
 			var cache = Akavache.BlobCache.LocalMachine;
-			var cachedCharacters = cache.GetAndFetchLatest("CharacterList", () => _marvelService.GetCharacters(filter, limit, offset),
+			var cachedCharacters = cache.GetAndFetchLatest("CharacterList" + filter, () => _marvelService.GetCharacters(filter, limit, offset),
 				ofset =>
 				{
 					TimeSpan elapsed = DateTimeOffset.Now - ofset;
@@ -48,6 +79,8 @@ namespace Marvel
 				});
 
 			var result = await cachedCharacters.FirstOrDefaultAsync();
+
+			//var result =  await _marvelService.GetCharacters(filter, limit, offset);
 
 
 			if (result != null)
